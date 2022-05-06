@@ -29,7 +29,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Firebase tutorial'),
+        backgroundColor: Colors.grey[300],
+        elevation: 0.0,
+       // title: const Text('Firebase tutorial'),
         actions: [
           IconButton(
               onPressed: (() {
@@ -41,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
               }),
               icon: const Icon(
                 Icons.exit_to_app_outlined,
-                color: Colors.white,
+                color: Colors.blueGrey,
                 size: 30,
               )),
         ],
@@ -164,6 +166,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ],
+              ),
+                const SizedBox(
+                height: 30,
               ),
             ],
           ),

@@ -14,10 +14,16 @@ class _SigneOutPageState extends State<SigneOutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: Text('Signe in as: ' + user!.email!),
+            child: Text('Signe in as:\n${user!.email!}',   
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                          color: Colors.blueGrey,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22),),
           ),
           const SizedBox(height: 20,),
                    Container(
