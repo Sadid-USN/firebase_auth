@@ -1,26 +1,26 @@
+import 'dart:io';
+
 import 'package:firebase_tutorial/auth/firebaseApi.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegPage;
-  const LoginPage({Key? key,  required this.showRegPage}) : super(key: key);
+  const LoginPage({Key? key, required this.showRegPage}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
- final  _emailControllor = TextEditingController();
- final  _passwordControllor = TextEditingController();
+  final _emailControllor = TextEditingController();
+  final _passwordControllor = TextEditingController();
 
-
-
-@override
+  @override
   void dispose() {
-   _emailControllor.dispose();
-   _passwordControllor.dispose();
+    _emailControllor.dispose();
+    _passwordControllor.dispose();
 
     super.dispose();
   }
@@ -28,25 +28,42 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: const Text('Firebase tutorial')),
+      appBar: AppBar(
+        title: const Text('Firebase tutorial'),
+        actions: [
+          IconButton(
+              onPressed: (() {
+                if (Platform.isAndroid) {
+                  SystemNavigator.pop();
+                } else if (Platform.isIOS) {
+                  exit(0);
+                }
+              }),
+              icon: const Icon(
+                Icons.exit_to_app_outlined,
+                color: Colors.white,
+                size: 30,
+              )),
+        ],
+      ),
       backgroundColor: Colors.grey[300],
-
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-        
-                Icon(Icons.apple_sharp, size: 150, color: Colors.grey[700],),
-               const SizedBox(
+              Icon(
+                Icons.apple_sharp,
+                size: 150,
+                color: Colors.grey[700],
+              ),
+              const SizedBox(
                 height: 70.0,
               ),
               Text(
                 'Signe in',
                 style: GoogleFonts.ptSerif(
-                  fontSize: 38,
-                  fontWeight: FontWeight.bold
-                ),
+                    fontSize: 38, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 10.0,
@@ -67,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.grey[200],
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(12)),
-                child:  Padding(
+                child: Padding(
                   padding: const EdgeInsets.only(left: 16.0),
                   child: TextField(
                     controller: _emailControllor,
@@ -86,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.grey[200],
                     border: Border.all(color: Colors.white),
                     borderRadius: BorderRadius.circular(12)),
-                child:  Padding(
+                child: Padding(
                   padding: const EdgeInsets.only(left: 16.0),
                   child: TextField(
                     controller: _passwordControllor,
@@ -107,10 +124,11 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: BoxDecoration(
                     color: Colors.green[300],
                     borderRadius: BorderRadius.circular(12.0)),
-                child:  Center(
+                child: Center(
                   child: GestureDetector(
                     onTap: () {
-                      FirebaseApi().signeIn(_emailControllor.text, _passwordControllor.text);
+                      FirebaseApi().signeIn(
+                          _emailControllor.text, _passwordControllor.text);
                     },
                     child: const Text(
                       'Sign in',
@@ -127,19 +145,22 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
+                children: [
                   const Text(
                     'Forgot you\'re password?',
-                    style: TextStyle(color: Colors.black,  fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   GestureDetector(
                     onTap: widget.showRegPage,
                     child: const Text(
                       ' Registeretion',
                       style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
