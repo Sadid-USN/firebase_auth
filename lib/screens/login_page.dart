@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'forgot_password_page.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegPage;
   const LoginPage({Key? key, required this.showRegPage}) : super(key: key);
@@ -148,13 +150,20 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Forgot you\'re password?',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                   GestureDetector(
+                     onTap: (() {
+                       Navigator.push(context, MaterialPageRoute(builder: (context){
+                         return const ForgotPassword();
+                       }));
+                     }),
+                     child: Text(
+                      'Forgot password?',
+                      style: TextStyle(
+                        color:  Colors.blue[800],
+                        fontWeight: FontWeight.bold,
+                      ),
+                                     ),
+                   ),
                   GestureDetector(
                     onTap: widget.showRegPage,
                     child: const Text(
@@ -170,6 +179,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                 height: 30,
               ),
+
             ],
           ),
         ),
