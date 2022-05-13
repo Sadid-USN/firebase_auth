@@ -1,5 +1,5 @@
 import 'package:firebase_tutorial/screens/login_page.dart';
-import 'package:firebase_tutorial/screens/register_page.dart';
+import 'package:firebase_tutorial/screens/signe_up.dart';
 import 'package:flutter/cupertino.dart';
 
 class AuthPage extends StatefulWidget {
@@ -24,7 +24,7 @@ class _AuthPageState extends State<AuthPage> {
    if(showLoginPage){
      return  LoginPage(showRegPage: toggleinPage);
    }else{
-     return  RegisterPage(showLoginPage: toggleinPage);
+     return  SigneUp(showLoginPage: toggleinPage);
    }
   }
 }

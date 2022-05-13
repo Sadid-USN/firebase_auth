@@ -61,9 +61,8 @@ class _LoginPageState extends State<LoginPage> {
                 size: 150,
                 color: Colors.grey[700],
               ),
-              const SizedBox(
-                height: 70.0,
-              ),
+     
+       
               Text(
                 'Signe in',
                 style: GoogleFonts.ptSerif(
@@ -167,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                   GestureDetector(
                     onTap: widget.showRegPage,
                     child: const Text(
-                      ' Registeretion',
+                      ' Signe up',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
