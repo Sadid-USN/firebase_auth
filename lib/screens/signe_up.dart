@@ -33,7 +33,7 @@ class _SigneUpState extends State<SigneUp> {
                 style: GoogleFonts.ptSerif(
                     fontSize: 38,
                     fontWeight: FontWeight.bold,
-                    color: Colors.green[900]),
+                    color: const Color.fromARGB(255, 33, 44, 58)),
               ),
               const SizedBox(
                 height: 10.0,
@@ -66,7 +66,7 @@ class _SigneUpState extends State<SigneUp> {
                   GestureDetector(
                     onTap: widget.showLoginPage,
                     child: const Text(
-                      ' Signe in',
+                      ' Sign in',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,

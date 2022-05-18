@@ -19,7 +19,6 @@ class _LoginPageState extends State<LoginPage> {
   final _emailControllor = TextEditingController();
   final _passwordControllor = TextEditingController();
 
-
   @override
   void dispose() {
     _emailControllor.dispose();
@@ -34,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         backgroundColor: Colors.grey[300],
         elevation: 0.0,
-       // title: const Text('Firebase tutorial'),
+        // title: const Text('Firebase tutorial'),
         actions: [
           IconButton(
               onPressed: (() {
@@ -62,10 +61,8 @@ class _LoginPageState extends State<LoginPage> {
                 size: 150,
                 color: Colors.grey[700],
               ),
-     
-       
               Text(
-                'Signe in',
+                'Sign in',
                 style: GoogleFonts.ptSerif(
                     fontSize: 38, fontWeight: FontWeight.bold),
               ),
@@ -150,24 +147,25 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   GestureDetector(
-                     onTap: (() {
-                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                         return const ForgotPassword();
-                       }));
-                     }),
-                     child: Text(
+                  GestureDetector(
+                    onTap: (() {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const ForgotPassword();
+                      }));
+                    }),
+                    child: Text(
                       'Forgot password?',
                       style: TextStyle(
-                        color:  Colors.blue[800],
+                        color: Colors.blue[800],
                         fontWeight: FontWeight.bold,
                       ),
-                                     ),
-                   ),
+                    ),
+                  ),
                   GestureDetector(
                     onTap: widget.showRegPage,
                     child: const Text(
-                      ' Signe up',
+                      ' Sign up',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
@@ -176,10 +174,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-                const SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-
             ],
           ),
         ),

@@ -35,8 +35,8 @@ class FirebaseApi {
  
   ) async {
     await FirebaseFirestore.instance.collection('users').add({
-      "firstName": firstName,
-      "lastName": lastName,
+      "name": firstName,
+      "last": lastName,
       "age": age
    
      

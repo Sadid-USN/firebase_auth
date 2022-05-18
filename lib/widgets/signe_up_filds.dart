@@ -43,7 +43,7 @@ class _SigneUpFildsState extends State<SigneUpFilds> {
                     controller: _firstNameControllor,
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
-                        border: InputBorder.none, hintText: 'First name'),
+                        border: InputBorder.none, hintText: 'Name'),
                   ),
                 ),
               ),
@@ -62,7 +62,7 @@ class _SigneUpFildsState extends State<SigneUpFilds> {
                     controller: _lastNameControllor,
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
-                        border: InputBorder.none, hintText: 'Last name'),
+                        border: InputBorder.none, hintText: 'Last Name'),
                   ),
                 ),
               ),

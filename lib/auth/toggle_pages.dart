@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_tutorial/auth/auth_page.dart';
-import 'package:firebase_tutorial/screens/signe_out_page.dart';
+import 'package:firebase_tutorial/screens/user_info_page.dart';
 import 'package:flutter/material.dart';
 
 class TogglePage extends StatelessWidget {
@@ -14,7 +14,7 @@ class TogglePage extends StatelessWidget {
         
         builder: (context, snapShot){
           if(snapShot.hasData){
-            return const SigneOutPage();
+            return const UserInfoPage();
           }else{
             return const AuthPage();
           }
