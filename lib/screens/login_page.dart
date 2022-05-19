@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:firebase_tutorial/auth/firebaseApi.dart';
+import 'package:firebase_tutorial/data/firebaseApi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: GestureDetector(
                     onTap: () {
                       FirebaseApi().signeIn(
-                          _emailControllor.text, _passwordControllor.text);
+                          _emailControllor.text, _passwordControllor.text, context);
                     },
                     child: const Text(
                       'Sign in',

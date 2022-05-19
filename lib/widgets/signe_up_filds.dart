@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../auth/firebaseApi.dart';
+import '../data/firebaseApi.dart';
 
 class SigneUpFilds extends StatefulWidget {
   const SigneUpFilds({Key? key}) : super(key: key);
